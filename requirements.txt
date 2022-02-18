@@ -6,6 +6,7 @@ cfgv==3.3.1
 click==8.0.3
 colorama==0.4.4
 distlib==0.3.4
+environs==9.5.0
 fastapi==0.74.0
 filelock==3.6.0
 flake8==4.0.1
@@ -25,6 +26,7 @@ pycodestyle==2.8.0
 pydantic==1.9.0
 pyflakes==2.4.0
 pylint==2.12.2
+pymongo==4.0.1
 python-dotenv==0.19.2
 PyYAML==6.0
 six==1.16.0
