@@ -17,5 +17,6 @@ class RepositoryWork:
     def read(self):
         return self.connection.find()
 
-    def delete(self, id: int):
-        ...
+    def delete(self, id: str):
+        if self.connection.find_one({"_id": ObjectId(id)}):
+            self.connection.delete_one({"_id": ObjectId(id)})

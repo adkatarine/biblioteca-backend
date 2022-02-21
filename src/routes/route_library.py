@@ -24,5 +24,6 @@ def update_book(id: str, work: Work):
 
 
 @router.delete("/obras/{id}")
-def delete_book(id: int):
+def delete_book(id: str):
+    RepositoryWork().delete(id)
     return {"message": "delete_book"}
