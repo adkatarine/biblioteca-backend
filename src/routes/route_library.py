@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from src.infra.mongodb.repositories import RepositoryWork
-from src.infra.Helper.helper import helper_convert
+from src.infra.helper.helper import helper_convert
 from src.schemas import Work
 
 router = APIRouter()
@@ -18,7 +18,8 @@ def insert_book(work: Work):
 
 
 @router.put("/obras/{id}")
-def update_book(id: int):
+def update_book(id: str, work: Work):
+    RepositoryWork().update(id, work)
     return {"message": "update_book"}
 
 
