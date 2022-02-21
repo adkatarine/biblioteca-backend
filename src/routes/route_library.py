@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 from src.infra.mongodb.repositories import RepositoryWork
+from src.infra.Helper.helper import helper_convert
 from src.schemas import Work
 
 router = APIRouter()
@@ -7,7 +8,7 @@ router = APIRouter()
 
 @router.get("/obras")
 def read_book():
-    return {"message": "read_book"}
+    return [helper_convert(obra) for obra in RepositoryWork().read()]
 
 
 @router.post("/obras")
